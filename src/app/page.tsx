@@ -1,103 +1,143 @@
-import Image from "next/image";
+// import { CarouselDemo } from "@/components/carousel"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import {WhatsappLogo} from '@phosphor-icons/react/dist/ssr'
+import image1 from '../../public/image/entregador.jpg'
+import imagem1 from '../../public/image/imagem 1.png'
+import imagem2 from '../../public/image/imagem2.png'
+import imagem3 from '../../public/image/imagem3.png'
 
-export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+import Image from 'next/image'
+import { Cardlog } from "@/components/cards"
+import {Produtos} from "@/components/produtos"
+import { Endereco } from "@/components/endereco"
+import { Footer } from "@/components/footer"
+import { AutoImageSlider } from "@/components/carousel"
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+// import { CarouselSize } from "@/components/carousel"
+
+
+
+
+export default function Home(){
+
+  const image  = [
+    {
+      src: "/image/sl-1.jpg",
+      alt: "Slide 1",
+    },
+    {
+      src: "/image/sl-2.jpg",
+      alt: "Slide 2",
+    },
+    {
+      src: "/image/sl-3.jpg",
+      alt: "Slide 3",
+    },
+    {
+      src: "/image/sl-4.jpg",
+      alt: "Slide 4",
+    },
+    
+  ]
+
+  return(
+    <main >
+
+      <div className=" flex-items-center justify-center  bg-gray-100">
+        <main className="container mx-auto py-4 px-2 sm:px-4 ">
+          <div className="mx-auto w-full max-w-full sm:max-w-3xl ">
+            <div className="w-full aspect-[16/9] sm:aspect-[16/6] ">
+            <AutoImageSlider images={image} interval={5000}  className="w-full h-[200px] sm:h-[300px] md:h-[500px] lg:h-[600px] overflow-hidden " />
+            </div>
+          </div>
+        </main>
+      </div>
+
+      <div className="bg-blue-900 mt-2 w-full py-10 px-4">
+
+        <h1 className="text-center font-bold text-white text-2xl sm:text-4xl mb-10">
+          SL baterias tem a bateria que você precisa     
+        </h1>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-8 container mx-auto mr-14 ">
+          <Card className="bg-white w-[374px] h-[203px] shadow-[0px_10px_30px_rgba(0,0,0,0.2)] object-cover hover:scale-110 duration-300">
+              <CardHeader>
+                <div className=" flex items-center justify-center">
+                  <CardTitle className="text-lg sm:text-xl text-black select-none">
+                    <Image src={imagem1} alt="imagem1"/>
+                  </CardTitle>
+                </div>
+                <CardDescription className="text-black flex flex-items-center justify-center">
+                Selecioone o modelo de bateria para seu veiculo
+                </CardDescription>
+              </CardHeader>
+          </Card>
+
+          <Card className="bg-white w-[374px] h-[203px] shadow-[0px_10px_30px_rgba(0,0,0,0.2)] object-cover hover:scale-110 duration-300">
+              <CardHeader>
+                <div className="flex items-center justify-center">
+                  <CardTitle className="text-lg sm:text-xl text-black select-none">
+                  <Image src={imagem2} alt="imagem2"/>
+                  </CardTitle>
+
+                </div>
+                <CardDescription className="text-black flex flex-items-center justify-center">
+                Pagamento na entrega da sua bateria
+                </CardDescription>
+              </CardHeader>
+          </Card>
+
+          <Card className="bg-white w-[374px] h-[203px] shadow-[0px_10px_30px_rgba(0,0,0,0.2)] object-cover hover:scale-110 duration-300">
+              <CardHeader>
+                <div className="flex items-center justify-center">
+                  <CardTitle className="text-lg sm:text-xl text-black select-none">
+                  <Image src={imagem3} alt="imagem3"/>
+                  </CardTitle>
+                </div>
+                <CardDescription className="text-black flex flex-items-center justify-center">
+                A SL bateria entrga e a instalação é gratis 
+                </CardDescription>
+              </CardHeader>
+          </Card>
+      </div>
+
+      <div className="flex items-center justify-center mt-10">
+            <a target="_blank" href={`https://wa.me/5585984080659?text=Olá vim pelo site e gostaria de mais informações`} className="bg-emerald-500 px-6 py-3 rounded-md font-semibold flex flex-items-center justify-center w-fit gap-2 text-white">
+              <WhatsappLogo className="w-6 h-6"/>
+              Ligue e peça agora !
+            </a>
+          </div>
+
+      </div>
+
+      <div className="bg-blue-950 px-4 py-10">
+        <h1 className="text-center font-bold text-2xl sm:text-4xl text-white mb-12">
+          Baterias originais de todas as marcas
+        </h1>
+
+        {/* <div className="flex flex-items-center justify-center">
+          <CarouselSize/>
+        </div> */}
+
+        <div>
+            <Cardlog/>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+
+        <div>
+          <h1 className="text-center font-bold text-2xl sm:text-4xl text-white my-10">Conheça nossos produtos</h1>
+
+          <div>
+            <Produtos/>
+          </div>
+        </div>
+
+        <div>
+            <Endereco/>
+        </div>
+            <Footer/>
+      </div>
+
+    </main>
+  )
 }
