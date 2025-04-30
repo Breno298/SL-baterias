@@ -17,7 +17,6 @@ interface AutoImageSliderProps {
 export function AutoImageSlider({
   images,
   interval = 5000,
-  showControls = true,
   showIndicators = true,
   className,
 }: AutoImageSliderProps) {
@@ -25,10 +24,6 @@ export function AutoImageSlider({
 
   const goToNext = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)
-  }, [images.length])
-
-  const goToPrevious = useCallback(() => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length)
   }, [images.length])
 
   const goToSlide = useCallback((index: number) => {
