@@ -1,5 +1,5 @@
 import { WhatsappLogo } from "@phosphor-icons/react/dist/ssr";
-import { Button } from "../ui/button";
+
 
 
 export function Endereco(){
@@ -33,12 +33,7 @@ export function Endereco(){
                         <a target="_blank" href={`https://wa.me/5585984080659?text=Olá vim pelo site e gostaria de mais informações`}  className="bg-green-500 flex justify-center items-center rounded-2xl  h-[40px] mt-6 text-white font-semibold text-2xl shadow-md" > 
                         <WhatsappLogo className="w-6 h-6 mt-1 mr-1"/>
                         Whatsapp</a>
-                        {/* <Button className="bg-green-500 text-2xl w-55 h-10 mt-10 ">
-                            
-                        <WhatsappLogo className="w-[10px] h-[10px]"/>
-                         <a target='_blank' href={`https://wa.me/5585992124104?text=Olá vim pelo site e gostaria de mais informações`} >
-                         Whatsapp</a>
-                        </Button> */}
+                        
                     </div>
                     
                 </div>

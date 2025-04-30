@@ -1,7 +1,6 @@
-import Link from "next/link";
+
 import logo from '../../../public/image/logo-sl-bateria.jpg'
 import Image from "next/image";
-import { Button } from "../ui/button";
 import { WhatsappLogo } from "@phosphor-icons/react/dist/ssr";
 
 export function Header(){

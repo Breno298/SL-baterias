@@ -1,8 +1,8 @@
 // import { CarouselDemo } from "@/components/carousel"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import {WhatsappLogo} from '@phosphor-icons/react/dist/ssr'
-import image1 from '../../public/image/entregador.jpg'
+
 import imagem1 from '../../public/image/imagem 1.png'
 import imagem2 from '../../public/image/imagem2.png'
 import imagem3 from '../../public/image/imagem3.png'
