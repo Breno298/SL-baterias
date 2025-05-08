@@ -1,5 +1,5 @@
 // import { CarouselDemo } from "@/components/carousel"
-'use client'
+
 
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import {WhatsappLogo} from '@phosphor-icons/react/dist/ssr'
@@ -15,33 +15,10 @@ import {Produtos} from "@/components/produtos"
 import { Endereco } from "@/components/endereco"
 import { Footer } from "@/components/footer"
 import { AutoImageSlider } from "@/components/carousel"
-import { useEffect, useState } from "react"
-
 
 // import { CarouselSize } from "@/components/carousel"
 
-
-
-
 export default function Home(){
-
-  const [showButton, setShowButton] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY || window.pageYOffset;
-      // Exibe o botão após rolar 100vh (altura da tela)
-      if (scrollY > window.innerHeight ) {
-        setShowButton(true);
-      } else {
-        setShowButton(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   const image  = [
     {
       src: "/image/sl-1.jpg",
@@ -64,28 +41,22 @@ export default function Home(){
 
   return(
 
-
-        
-
     <>
-
-      
-
-      {/* Botão flutuante do WhatsApp */}
-      <a
-        href="https://wa.me/5585984080659?text=Olá vim pelo site e gostaria de mais informações."
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Conversar no WhatsApp"
-        className="fixed bottom-4 right-4 z-50   rounded-full shadow-lg flex items-center justify-center hover:scale-120 duration-300"
-      >
-        <Image src={whatsApp} alt="logo-whatsapp"
-          className="w-14 h-14"
-        
-        />
-        </a>
-      
     <main>
+
+        {/* Botão flutuante do WhatsApp */}
+        <a
+            href="https://wa.me/5585984080659?text=Olá vim pelo site e gostaria de mais informações."
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Conversar no WhatsApp"
+            className="fixed bottom-4 right-4 z-50   rounded-full shadow-lg flex items-center justify-center hover:scale-120 duration-300"
+          >
+            <Image src={whatsApp} alt="logo-whatsapp"
+              className="w-14 h-14"
+            
+            />
+        </a>
 
         <div className=" flex-items-center justify-center  bg-gray-100">
           <main className="container mx-auto py-4 px-2 sm:px-4 ">
@@ -151,13 +122,6 @@ export default function Home(){
               </Card>
             </div>
           </a>
-
-         
-              
-
-                  
-
-         
 
           <div className="flex items-center justify-center mt-10">
             <a target="_blank" href={`https://wa.me/5585984080659?text=Olá vim pelo site e gostaria de mais informações`} className="bg-emerald-500 px-6 py-3 rounded-md font-semibold flex flex-items-center justify-center w-fit gap-2 text-white">
